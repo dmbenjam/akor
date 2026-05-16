@@ -3,18 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Purchase Materials from AKOR Parenting." />
   <title>Purchase Materials - AKOR Parenting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="../../assets/css/main.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div data-site-header></div>
-  <main id="main" class="page-main container">
-    <h1>Purchase Materials</h1>
-    <p>Placeholder page for curriculum kits, guides, and educational resources.</p>
-    <a class="btn btn-outline-cyan" href="index.html">Back to How You Can Help</a>
+
+  <main id="main" class="page-main page-main--with-hero">
+    <section class="page-hero" aria-label="Cover image">
+      <div
+        class="page-hero__media"
+        role="img"
+        aria-label="Placeholder hero image — materials"
+        style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&amp;fit=crop&amp;w=1920&amp;q=70');"
+      ></div>
+    </section>
+
+    <section class="section-subtle" aria-labelledby="materials-heading">
+      <div class="container">
+        <div class="page-content">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="index.html">How You Can Help</a></li>
+              <li><span aria-current="page">Purchase Materials</span></li>
+            </ol>
+          </nav>
+
+          <header class="page-header">
+            <h1 id="materials-heading">Purchase Materials</h1>
+          </header>
+          <h2 class="page-lead">
+            Placeholder intro — curriculum kits, guides, and promotional items available for purchase.
+          </h2>
+          <div class="page-prose">
+            <p>
+              Placeholder paragraph for t-shirts and poetry books.
+            </p>
+            <p>
+              Placeholder paragraph for workshop kits and family resources.
+            </p>
+            <p>
+              Placeholder paragraph for ordering and shipping information.
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 40px; text-align: center;">
+          <a class="btn btn-outline-cyan" href="index.html">Back to How You Can Help</a>
+        </p>
+      </div>
+    </section>
   </main>
+
   <div data-site-footer></div>
   <script src="../../assets/js/shell.js"></script>
   <script>renderSiteShell('../../');</script>

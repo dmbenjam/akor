@@ -203,7 +203,28 @@ section.page-hero {
   max-width: 56rem;
   margin: 0 auto; /* center the paragraph column */
 }
-.page-prose p:last-child {
+.page-prose h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.6rem);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+.page-prose h3:first-of-type {
+  margin-top: 0;
+}
+.page-prose ul {
+  margin: 0 0 1em;
+  padding-left: 1.35em;
+  color: var(--text-secondary);
+}
+.page-prose li {
+  margin-bottom: 0.65em;
+}
+.page-prose li:last-child {
+  margin-bottom: 0;
+}
+.page-prose p:last-child,
+.page-prose ul:last-child {
   margin-bottom: 0;
 }
 
@@ -231,8 +252,14 @@ section.page-hero {
   margin: 0 auto;
   justify-content: center;
 }
+.cards--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 56rem;
+  margin: 0 auto;
+}
 @media (max-width: 900px) {
-  .cards--two {
+  .cards--two,
+  .cards--three {
     grid-template-columns: 1fr;
     max-width: 480px;
   }
@@ -925,6 +952,103 @@ section { padding: 96px 0; }
   transform: scale(1.03);
 }
 .partner-logo:nth-child(even):hover { background: var(--brand-cyan); color: var(--text-primary); }
+
+/* =========================================================
+   === TEAM (people blocks) =================================
+   ========================================================= */
+.team-section {
+  width: 100%;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.team-section:first-of-type {
+  margin-top: 2rem;
+}
+.team-section + .team-section {
+  margin-top: 4rem;
+}
+.team-section__heading {
+  font-size: clamp(1.35rem, 2.2vw, 1.6rem);
+  margin: 0 0 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.team-section__intro {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+.team-section__intro.page-prose {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+.team-section__intro ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.35em;
+}
+.team-section__intro li {
+  margin-bottom: 0.5em;
+}
+.team-section__intro li:last-child {
+  margin-bottom: 0;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 0;
+}
+.team-member__avatar {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(233, 30, 140, 0.12), rgba(0, 188, 212, 0.15));
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-pink);
+}
+.team-member__avatar svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+.team-member__info {
+  min-width: 0;
+  padding-top: 0.35rem;
+}
+.team-member__name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.team-member__title {
+  margin: 0.35rem 0 0;
+  font-size: 0.925rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+@media (max-width: 640px) {
+  .team-grid,
+  .team-grid--officers {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
 
 /* =========================================================
    === FOUNDER =============================================

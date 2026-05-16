@@ -5,19 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="How You Can Help AKOR Parenting." />
   <title>How You Can Help - AKOR Parenting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="../../assets/css/main.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div data-site-header></div>
-  <main id="main" class="page-main">
-    <div data-section-index data-section-key="how-you-can-help"></div>
+
+  <main id="main" class="page-main page-main--with-hero">
+    <section class="page-hero" aria-label="Cover image">
+      <div
+        class="page-hero__media"
+        role="img"
+        aria-label="Placeholder hero image — community support"
+        style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&amp;fit=crop&amp;w=1920&amp;q=80');"
+      ></div>
+    </section>
+
+    <section class="section-subtle" aria-labelledby="help-heading">
+      <div class="container">
+        <div class="page-content">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../index.html">Home</a></li>
+              <li><span aria-current="page">How You Can Help</span></li>
+            </ol>
+          </nav>
+
+          <header class="page-header">
+            <h1 id="help-heading">How You Can Help</h1>
+          </header>
+          <h2 class="page-lead">
+            Placeholder intro — a short line about ways to support AKOR’s mission. Replace with final copy.
+          </h2>
+          <div class="page-prose">
+            <p>
+              Placeholder paragraph one. Describe how donations, material purchases, and partnerships help reach families in Haiti and the diaspora.
+            </p>
+            <p>
+              Placeholder paragraph two. Share impact examples or community stories.
+            </p>
+            <p>
+              Placeholder paragraph three. Invite readers to explore Donate, Purchase Materials, and Partner below.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Sub-pages">
+      <div class="container">
+        <div class="cards cards--three">
+          <article class="card">
+            <div
+              class="card__image"
+              role="img"
+              aria-label="Placeholder image for donation"
+              style="background-image: url('https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&amp;fit=crop&amp;w=800&amp;q=80');"
+            ></div>
+            <div class="card__body">
+              <h3>Donate</h3>
+              <p>Placeholder — support families through direct contribution.</p>
+              <a class="btn btn-cyan" href="donate.html">Donate</a>
+            </div>
+          </article>
+          <article class="card">
+            <div
+              class="card__image"
+              role="img"
+              aria-label="Placeholder image for materials"
+              style="background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&amp;fit=crop&amp;w=800&amp;q=70');"
+            ></div>
+            <div class="card__body">
+              <h3>Purchase Materials</h3>
+              <p>Placeholder — curriculum kits, guides, and family resources.</p>
+              <a class="btn btn-pink" href="purchase-materials.html">Purchase Materials</a>
+            </div>
+          </article>
+          <article class="card">
+            <div
+              class="card__image"
+              role="img"
+              aria-label="Placeholder image for partnership"
+              style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&amp;fit=crop&amp;w=800&amp;q=80');"
+            ></div>
+            <div class="card__body">
+              <h3>Partner</h3>
+              <p>Placeholder — bring AKOR to your school, church, or organization.</p>
+              <a class="btn btn-outline-cyan" href="partner.html">Partner</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
+
   <div data-site-footer></div>
   <script src="../../assets/js/shell.js"></script>
   <script>renderSiteShell('../../');</script>
-  <script src="../../assets/js/section-index.js"></script>
   <script src="../../assets/js/main.js"></script>
 </body>
 </html>
