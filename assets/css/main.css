@@ -185,6 +185,9 @@ section.page-hero {
   margin: 0;
   color: var(--text-primary);
 }
+.page-header--compact {
+  margin-bottom: 0;
+}
 
 /* Intro line below title (SquareSpace “intro” / deck) */
 .page-lead {
@@ -268,6 +271,10 @@ section.page-hero {
 /* Section shared */
 section { padding: 96px 0; }
 .section-subtle { background: var(--bg-subtle); }
+.section-subtle--compact {
+  padding-top: 56px;
+  padding-bottom: 72px;
+}
 .section-header { text-align: center; margin-bottom: 56px; }
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
@@ -963,19 +970,19 @@ section { padding: 96px 0; }
   margin-right: auto;
 }
 .team-section:first-of-type {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .team-section + .team-section {
-  margin-top: 4rem;
+  margin-top: 2.25rem;
 }
 .team-section__heading {
   font-size: clamp(1.35rem, 2.2vw, 1.6rem);
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.75rem;
   color: var(--text-primary);
   letter-spacing: -0.01em;
 }
 .team-section__intro {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   color: var(--text-secondary);
 }
 .team-section__intro.page-prose {
@@ -983,12 +990,15 @@ section { padding: 96px 0; }
   margin-left: 0;
   margin-right: 0;
 }
+.team-section__intro p {
+  margin-bottom: 0.35em;
+}
 .team-section__intro ul {
-  margin: 0.75rem 0 0;
+  margin: 0.25rem 0 0.5rem;
   padding-left: 1.35em;
 }
 .team-section__intro li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
 }
 .team-section__intro li:last-child {
   margin-bottom: 0;
@@ -996,7 +1006,7 @@ section { padding: 96px 0; }
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem 2.5rem;
+  gap: 1.25rem 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1046,7 +1056,7 @@ section { padding: 96px 0; }
   .team-grid,
   .team-grid--officers {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.1rem;
   }
 }
 
