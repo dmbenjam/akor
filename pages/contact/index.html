@@ -38,20 +38,67 @@
           <header class="page-header">
             <h1 id="contact-heading">Contact</h1>
           </header>
-          <h2 class="page-lead">
-            Placeholder intro — how to reach AKOR Parenting by email, mail, or the form in the footer.
-          </h2>
-          <div class="page-prose">
-            <p>
-              Placeholder paragraph for general inquiries. Reach us at <a href="mailto:akorparenting@gmail.com">akorparenting@gmail.com</a>.
+
+          <p class="contact-intro">
+            Have a question or want to connect? Send us a message and we will respond as soon as we can.
+            You can also email us at <a href="mailto:akorparenting@gmail.com">akorparenting@gmail.com</a>.
+          </p>
+
+          <form
+            class="contact-form"
+            id="page-contact-form"
+            novalidate
+            aria-describedby="contact-form-hint"
+          >
+            <p id="contact-form-hint" class="contact-form__hint">
+              Fields marked with an asterisk (<span aria-hidden="true">*</span>) are required.
             </p>
-            <p>
-              Placeholder paragraph for office location and hours. AKOR Parenting, Corp — 12345 NE 2nd Avenue, Miami, FL 33161.
-            </p>
-            <p>
-              Placeholder paragraph for social channels or partnership requests. You can also use the contact form in the site footer on any page.
-            </p>
-          </div>
+
+            <div class="contact-form__field">
+              <label for="pc-name">Name <span class="contact-form__required" aria-hidden="true">*</span></label>
+              <input
+                id="pc-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                aria-required="true"
+              />
+            </div>
+
+            <div class="contact-form__field">
+              <label for="pc-email">Email <span class="contact-form__required" aria-hidden="true">*</span></label>
+              <input
+                id="pc-email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                required
+                aria-required="true"
+              />
+            </div>
+
+            <div class="contact-form__field">
+              <label for="pc-message">Message <span class="contact-form__required" aria-hidden="true">*</span></label>
+              <textarea
+                id="pc-message"
+                name="message"
+                rows="6"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-pink">Send message</button>
+
+            <div
+              class="contact-form__feedback"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></div>
+          </form>
         </div>
       </div>
     </section>

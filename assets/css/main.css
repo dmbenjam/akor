@@ -237,9 +237,112 @@ section.page-hero {
   }
   .breadcrumbs,
   .page-header,
-  .page-lead {
+  .page-lead,
+  .contact-intro,
+  .contact-form {
     max-width: none;
   }
+}
+
+/* Contact page form */
+.contact-intro {
+  max-width: 56rem;
+  margin: 0 auto 1.75rem;
+  color: var(--text-secondary);
+}
+
+.contact-form {
+  max-width: 36rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form__hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-form label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.contact-form__required {
+  color: var(--brand-pink-dark);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.contact-form textarea {
+  min-height: 9rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--brand-cyan-dark);
+  box-shadow: 0 0 0 3px rgba(118, 220, 237, 0.35);
+}
+
+.contact-form input:user-invalid:not(:placeholder-shown),
+.contact-form textarea:user-invalid:not(:placeholder-shown) {
+  border-color: #c94b6a;
+}
+
+.contact-form button[type="submit"] {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.contact-form__feedback {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-form__feedback[hidden] {
+  display: none;
+}
+
+.contact-form__feedback:not([hidden]) {
+  display: block;
+}
+
+.contact-form__feedback.is-success {
+  background: rgba(118, 220, 237, 0.18);
+  border: 1px solid var(--brand-cyan);
+  color: var(--text-primary);
+}
+
+.contact-form__feedback.is-error {
+  background: rgba(201, 75, 106, 0.08);
+  border: 1px solid #c94b6a;
+  color: var(--text-primary);
 }
 
 .page-section-title {
@@ -272,8 +375,11 @@ section.page-hero {
 section { padding: 96px 0; }
 .section-subtle { background: var(--bg-subtle); }
 .section-subtle--compact {
-  padding-top: 56px;
-  padding-bottom: 72px;
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+.page-content--team .breadcrumbs {
+  margin-bottom: 12px;
 }
 .section-header { text-align: center; margin-bottom: 56px; }
 .section-header h2 {
@@ -970,19 +1076,19 @@ section { padding: 96px 0; }
   margin-right: auto;
 }
 .team-section:first-of-type {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .team-section + .team-section {
-  margin-top: 2.25rem;
+  margin-top: 1.5rem;
 }
 .team-section__heading {
   font-size: clamp(1.35rem, 2.2vw, 1.6rem);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
   color: var(--text-primary);
   letter-spacing: -0.01em;
 }
 .team-section__intro {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: var(--text-secondary);
 }
 .team-section__intro.page-prose {
@@ -991,14 +1097,16 @@ section { padding: 96px 0; }
   margin-right: 0;
 }
 .team-section__intro p {
-  margin-bottom: 0.35em;
+  margin-bottom: 0.15em;
+}
+.team-section__intro.page-prose ul {
+  margin: 0.15em 0 0.35em;
 }
 .team-section__intro ul {
-  margin: 0.25rem 0 0.5rem;
   padding-left: 1.35em;
 }
 .team-section__intro li {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.1em;
 }
 .team-section__intro li:last-child {
   margin-bottom: 0;
@@ -1006,7 +1114,7 @@ section { padding: 96px 0; }
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem 2.5rem;
+  gap: 0.75rem 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1036,19 +1144,23 @@ section { padding: 96px 0; }
 }
 .team-member__info {
   min-width: 0;
-  padding-top: 0.35rem;
+  padding-top: 0.2rem;
+}
+/* Override global p { margin-bottom: 1em } for name + title pair */
+.team-member__name,
+.team-member__title {
+  margin: 0;
 }
 .team-member__name {
-  margin: 0;
   font-size: 1.05rem;
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.3;
   color: var(--text-primary);
 }
 .team-member__title {
-  margin: 0.35rem 0 0;
+  margin-top: 0.15rem;
   font-size: 0.925rem;
-  line-height: 1.45;
+  line-height: 1.35;
   color: var(--text-secondary);
   font-weight: 400;
 }
@@ -1056,7 +1168,7 @@ section { padding: 96px 0; }
   .team-grid,
   .team-grid--officers {
     grid-template-columns: 1fr;
-    gap: 1.1rem;
+    gap: 0.65rem;
   }
 }
 

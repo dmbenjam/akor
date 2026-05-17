@@ -177,40 +177,53 @@ if (prefersReducedMotion) {
 /* =========================================================
    === CONTACT FORM (no backend, client-side only) =========
    ========================================================= */
+function showFormFeedback(feedback, message, variant) {
+  if (!feedback) return;
+  feedback.textContent = message;
+  feedback.hidden = false;
+  feedback.classList.remove('is-success', 'is-error', 'is-visible');
+  if (feedback.classList.contains('contact-form__feedback')) {
+    feedback.classList.add(variant === 'success' ? 'is-success' : 'is-error');
+  }
+  feedback.classList.add('is-visible');
+}
+
 async function handleFormSubmit(e) {
   e.preventDefault();
   const form = e.currentTarget;
-  const success = document.getElementById('contact-success');
+  const feedback = form.querySelector('[role="status"]');
   const name = form.name.value.trim();
   const email = form.email.value.trim();
   const message = form.message.value.trim();
 
-  if (!success) return;
+  if (!feedback) return;
 
   try {
     if (!name || !email || !message) {
-      success.textContent = 'Please fill out all fields before submitting.';
-      success.classList.add('is-visible');
+      showFormFeedback(feedback, 'Please fill out all fields before submitting.', 'error');
+      const firstEmpty = !name ? form.name : !email ? form.email : form.message;
+      firstEmpty?.focus();
       return;
     }
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!emailOk) {
-      success.textContent = 'Please enter a valid email address.';
-      success.classList.add('is-visible');
+      showFormFeedback(feedback, 'Please enter a valid email address.', 'error');
+      form.email.focus();
       return;
     }
     // Placeholder until backend integration.
     console.log('Contact form submission:', { name, email, message });
     form.reset();
-    success.textContent = "Thanks for reaching out -- we'll get back to you soon.";
-    success.classList.add('is-visible');
+    showFormFeedback(
+      feedback,
+      "Thanks for reaching out — we'll get back to you soon.",
+      'success'
+    );
   } catch (err) {
-    success.textContent = 'Something went wrong while submitting. Please try again.';
-    success.classList.add('is-visible');
+    showFormFeedback(feedback, 'Something went wrong while submitting. Please try again.', 'error');
   }
 }
 
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', handleFormSubmit);
-}
+document.querySelectorAll('#contact-form, #page-contact-form').forEach((form) => {
+  form.addEventListener('submit', handleFormSubmit);
+});
